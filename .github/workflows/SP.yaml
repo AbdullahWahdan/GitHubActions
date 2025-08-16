@@ -10,5 +10,8 @@ jobs:
         steps:
             - name: list files
               run: ./script.sh
+
+            - name: Checkout Repo
+              uses: actions/checkout@v5.0.0
     
     
