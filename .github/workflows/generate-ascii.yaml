@@ -20,6 +20,3 @@ jobs:
         run: cowsay -f dragon "Run for cover, i am a Dragon"
 
 
-      - name: Print the dragon in PowerShell
-        shell: powershell
-        run: cowsay -f dragon "Run for cover, i am a Dragon"
