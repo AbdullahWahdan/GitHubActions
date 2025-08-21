@@ -19,11 +19,3 @@ jobs:
       - name: Run dragon
         run: cowsay -f dragon "Run for cover, i am a Dragon"
 
-      - name: test file exists
-        run: grep -i "dragon" dragon.txt
-      
-      - name: read file
-        run: cat dragon.txt
-
-      - name: Checkout Repo files
-        run: ls
