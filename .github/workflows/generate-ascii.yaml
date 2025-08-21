@@ -2,24 +2,28 @@ name: cowsay
 on: push
 
 jobs:
-    ascii_job:
-        runs-on: self-hosted
-        steps:
-            - name: Checkout Repo
-              uses: actions/checkout@v4
+  dragon:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-            - name: install cowsay
-              run: choco install cowsay -y
-              shell: powershell
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-            - name: excute cowsay cmd
-              run: cowsay -f dragon "Run for cover, iam a Dragon." >> dragon.txt
-            
-            - name: test file exists
-              run: grep -i "dragon" dragon.txt
-            
-            - name: read file
-              run: cat dragon.txt
+      - name: Install cowsay via npm
+        run: npm install -g cowsay
 
-            - name: Checkout Repo files
-              run: ls
+      - name: Run dragon
+        run: cowsay -f dragon "Run for cover, i am a Dragon"
+
+      - name: test file exists
+        run: grep -i "dragon" dragon.txt
+      
+      - name: read file
+        run: cat dragon.txt
+
+      - name: Checkout Repo files
+        run: ls
